@@ -1,0 +1,63 @@
+<div class="foursquare-container">
+  <div class="foursquare-form" [formGroup]="foursquareForm">
+    <h4>Please, fill in the form to get all needed venues:</h4>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">City</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" (change)="getCoordinates()" formControlName="city">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Query</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="query">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Radius</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" formControlName="radius">
+      </div>
+    </div>
+    <div class="pull-right">
+      <button type="submit" [disabled]="foursquareForm.invalid" class="btn btn-primary my-button" (click)="loadVenues()">Load Venues</button>
+      <button
+        type="submit"
+        *ngIf="foursquareData.venues.length > 0"
+        class="btn btn-primary my-button"
+        (click)="showMap()">
+        Show on the Map
+      </button>
+    </div>
+  </div>
+
+  <div class="foursquare-table">
+    <div *ngIf="showInTheMap" class="google-maps-container">
+      <agm-map [latitude]="default_lat" [longitude]="default_lng">
+        <agm-marker [latitude]="default_lat" [longitude]="default_lat"></agm-marker>
+        <agm-marker latitude="52.678418" longitude="8.809007"></agm-marker>
+      </agm-map>
+    </div>
+
+    <table id="venues" *ngIf="foursquareData.venues.length > 0">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Lat</th>
+        <th>Lng</th>
+      </tr>
+      <tr *ngFor="let venue of foursquareData.venues">
+        <td>{{venue.id}}</td>
+        <td>{{venue.name}}</td>
+        <td>{{venue.location.address}}</td>
+        <td>{{venue.location.country}}</td>
+        <td>{{venue.location.city}}</td>
+        <td>{{venue.location.lat}}</td>
+        <td>{{venue.location.lng}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

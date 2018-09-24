@@ -1,0 +1,11 @@
+.home-page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px;
+  color: #C74B72;
+}
+
+.jumbotron {
+  color: #C74B72;
+}

@@ -1,0 +1,47 @@
+#venues {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 2px solid #C74B72;
+  width: 90%;
+  margin: 10px auto;
+}
+
+#venues td, #venues th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#venues tr:nth-child(even){background-color: #f2f2f2;}
+
+#venues tr:hover {background-color: #ddd;}
+
+#venues th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #C74B72;
+  color: white;
+}
+
+
+agm-map {
+  height: 300px;
+}
+
+.foursquare-form {
+  width: 75%;
+  margin: 0 auto;
+  color: #C74B72;
+}
+
+.google-maps-container {
+  width: 75%;
+  margin: 0 auto;
+  border: 3px solid #C74B72;
+}
+
+.my-button {
+  border: 0;
+  background-color: #C74B72;
+  margin: 10px;
+}

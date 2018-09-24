@@ -1,0 +1,16 @@
+.header-container {
+  border: 3px solid #C74B72;
+  background-color: #FFF1D7;
+  text-align: center;
+  color: #C74B72;
+  padding: 5px;
+}
+
+.login-logout-container {
+  text-align: center;
+}
+
+.my-button {
+  border: 0;
+  background-color: #C74B72;
+}

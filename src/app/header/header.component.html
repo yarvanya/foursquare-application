@@ -1,0 +1,21 @@
+<div class="header-container">
+  <h1>Foursquare Application</h1>
+  <div class="login-logout-container">
+    <button
+      type="button"
+      class="btn btn-primary my-button"
+      *ngIf="!authenticated"
+      (click)="socialSignIn('google')">
+      Google Login
+    </button>
+    <div *ngIf="authenticated">
+      <button
+        type="button"
+        class="btn btn-primary my-button"
+        (click)="socialSignOut()">
+        Google Logout
+      </button>
+      <h4>Вітаємо, {{googleData.name}}</h4>
+    </div>
+  </div>
+</div>
