@@ -51,7 +51,7 @@ export function getAuthServiceConfigs() {
     HttpClientModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAj6a2PGiw4E9fY8Pcq-OZLB4da2PWFXfU'
+      apiKey: 'AIzaSyD7hK7ZyE8a1u-ybHZi0gjiGm2pIV8zi0o'
     })
   ],
   providers: [

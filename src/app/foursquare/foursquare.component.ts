@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {VenueInterface} from './venue.interface';
-import {google} from '../../../node_modules/@agm/core/services/google-maps-types';
 
 @Component({
   selector: 'app-foursquare',
@@ -34,7 +33,7 @@ export class FoursquareComponent implements OnInit {
   ngOnInit() {}
 
   loadVenues() {
-    const findingURL = `https://api.foursquare.com/v2/venues/search?v=20161016&ll=${this.default_lat}%2C%201${this.default_lng}`;
+    const findingURL = `https://api.foursquare.com/v2/venues/search?v=20161016&ll=${this.default_lat}%2C%20${this.default_lng}`;
     const findingQuery = `query=${this.foursquareForm.controls['query'].value}`;
     const findingRadius = `radius=${this.foursquareForm.controls['radius'].value}`;
     const client_id = 'client_id=HPFNK0MP3UL3R5HQL4TMC1MFQ1TZZHEMSBTKU3QC0YCBMDEB';

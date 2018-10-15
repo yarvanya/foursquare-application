@@ -63,7 +63,7 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, { useHash: false })],
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, { useHash: true })],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         })
     ], AppRoutingModule);
@@ -216,7 +216,7 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"],
                 _agm_core__WEBPACK_IMPORTED_MODULE_16__["AgmCoreModule"].forRoot({
-                    apiKey: 'AIzaSyAj6a2PGiw4E9fY8Pcq-OZLB4da2PWFXfU'
+                    apiKey: 'AIzaSyD7hK7ZyE8a1u-ybHZi0gjiGm2pIV8zi0o'
                 })
             ],
             providers: [
@@ -369,7 +369,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#venues {\r\n  font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  border: 2px solid #C74B72;\r\n  width: 90%;\r\n  margin: 10px auto;\r\n}\r\n\r\n#venues td, #venues th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n}\r\n\r\n#venues tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#venues tr:hover {background-color: #ddd;}\r\n\r\n#venues th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #C74B72;\r\n  color: white;\r\n}\r\n\r\nagm-map {\r\n  height: 300px;\r\n}\r\n\r\n.foursquare-form {\r\n  width: 75%;\r\n  margin: 0 auto;\r\n  color: #C74B72;\r\n}\r\n\r\n.google-maps-container {\r\n  width: 75%;\r\n  margin: 0 auto;\r\n  border: 3px solid #C74B72;\r\n}\r\n\r\n.my-button {\r\n  border: 0;\r\n  background-color: #C74B72;\r\n  margin: 10px;\r\n}\r\n"
+module.exports = "#venues {\r\n  font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  border: 2px solid #C74B72;\r\n  width: 90%;\r\n  margin: 10px auto;\r\n}\r\n\r\n#venues td, #venues th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n  color: #C74B72;\r\n}\r\n\r\n#venues tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#venues tr:hover {background-color: #ddd;}\r\n\r\n#venues th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #C74B72;\r\n  color: white;\r\n}\r\n\r\nagm-map {\r\n  height: 300px;\r\n}\r\n\r\n.foursquare-form {\r\n  width: 75%;\r\n  margin: 0 auto;\r\n  color: #C74B72;\r\n}\r\n\r\n.google-maps-container {\r\n  width: 75%;\r\n  margin: 0 auto;\r\n  border: 3px solid #C74B72;\r\n}\r\n\r\n.my-button {\r\n  border: 0;\r\n  background-color: #C74B72;\r\n  margin: 10px;\r\n}\r\n"
 
 /***/ }),
 
@@ -380,7 +380,7 @@ module.exports = "#venues {\r\n  font-family: \"Trebuchet MS\", Arial, Helvetica
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"foursquare-container\">\n  <div class=\"foursquare-form\" [formGroup]=\"foursquareForm\">\n    <h4>Please, fill in the form to get all needed venues:</h4>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">City</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" (change)=\"getCoordinates()\" formControlName=\"city\">\n      </div>\n    </div>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">Query</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" formControlName=\"query\">\n      </div>\n    </div>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">Radius</label>\n      <div class=\"col-sm-10\">\n        <input type=\"number\" class=\"form-control\" formControlName=\"radius\">\n      </div>\n    </div>\n    <div class=\"pull-right\">\n      <button type=\"submit\" [disabled]=\"foursquareForm.invalid\" class=\"btn btn-primary my-button\" (click)=\"loadVenues()\">Load Venues</button>\n      <button\n        type=\"submit\"\n        *ngIf=\"foursquareData.venues.length > 0\"\n        class=\"btn btn-primary my-button\"\n        (click)=\"showMap()\">\n        Show on the Map\n      </button>\n    </div>\n  </div>\n\n  <div class=\"foursquare-table\">\n    <div *ngIf=\"showInTheMap\" class=\"google-maps-container\">\n      <agm-map [latitude]=\"default_lat\" [longitude]=\"default_lng\">\n        <agm-marker [latitude]=\"default_lat\" [longitude]=\"default_lat\"></agm-marker>\n        <agm-marker latitude=\"52.678418\" longitude=\"8.809007\"></agm-marker>\n      </agm-map>\n    </div>\n\n    <table id=\"venues\" *ngIf=\"foursquareData.venues.length > 0\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Address</th>\n        <th>Country</th>\n        <th>City</th>\n        <th>Lat</th>\n        <th>Lng</th>\n      </tr>\n      <tr *ngFor=\"let venue of foursquareData.venues\">\n        <td>{{venue.id}}</td>\n        <td>{{venue.name}}</td>\n        <td>{{venue.location.address}}</td>\n        <td>{{venue.location.country}}</td>\n        <td>{{venue.location.city}}</td>\n        <td>{{venue.location.lat}}</td>\n        <td>{{venue.location.lng}}</td>\n      </tr>\n    </table>\n  </div>\n</div>\n"
+module.exports = "<div class=\"foursquare-container\">\n  <div class=\"foursquare-form\" [formGroup]=\"foursquareForm\">\n    <h4>Please, fill in the form to get all needed venues:</h4>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">City</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" (change)=\"getCoordinates()\" formControlName=\"city\">\n      </div>\n    </div>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">Query</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" formControlName=\"query\">\n      </div>\n    </div>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">Radius</label>\n      <div class=\"col-sm-10\">\n        <input type=\"number\" class=\"form-control\" formControlName=\"radius\">\n      </div>\n    </div>\n    <div class=\"pull-right\">\n      <button type=\"submit\" [disabled]=\"foursquareForm.invalid\" class=\"btn btn-primary my-button\" (click)=\"loadVenues()\">Load Venues</button>\n      <button\n        type=\"submit\"\n        *ngIf=\"foursquareData.venues.length > 0\"\n        class=\"btn btn-primary my-button\"\n        (click)=\"showMap()\">\n        Show on the Map\n      </button>\n    </div>\n  </div>\n\n  <div class=\"foursquare-table\">\n    <div *ngIf=\"showInTheMap\" class=\"google-maps-container\">\n      <agm-map [latitude]=\"default_lat\" [longitude]=\"default_lng\" [zoom]=\"17\">\n        <agm-marker [latitude]=\"default_lat\" [longitude]=\"default_lat\"></agm-marker>\n        <agm-marker *ngFor=\"let venue of foursquareData.venues\" [latitude]=\"venue.location.lat\" [longitude]=\"venue.location.lng\"></agm-marker>\n      </agm-map>\n    </div>\n\n    <table id=\"venues\" *ngIf=\"foursquareData.venues.length > 0\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Address</th>\n        <th>Country</th>\n        <th>City</th>\n        <th>Lat</th>\n        <th>Lng</th>\n      </tr>\n      <tr *ngFor=\"let venue of foursquareData.venues\">\n        <td>{{venue.id}}</td>\n        <td>{{venue.name}}</td>\n        <td>{{venue.location.address}}</td>\n        <td>{{venue.location.country}}</td>\n        <td>{{venue.location.city}}</td>\n        <td>{{venue.location.lat}}</td>\n        <td>{{venue.location.lng}}</td>\n      </tr>\n    </table>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -427,7 +427,7 @@ var FoursquareComponent = /** @class */ (function () {
     FoursquareComponent.prototype.ngOnInit = function () { };
     FoursquareComponent.prototype.loadVenues = function () {
         var _this = this;
-        var findingURL = "https://api.foursquare.com/v2/venues/search?v=20161016&ll=" + this.default_lat + "%2C%201" + this.default_lng;
+        var findingURL = "https://api.foursquare.com/v2/venues/search?v=20161016&ll=" + this.default_lat + "%2C%20" + this.default_lng;
         var findingQuery = "query=" + this.foursquareForm.controls['query'].value;
         var findingRadius = "radius=" + this.foursquareForm.controls['radius'].value;
         var client_id = 'client_id=HPFNK0MP3UL3R5HQL4TMC1MFQ1TZZHEMSBTKU3QC0YCBMDEB';
@@ -568,7 +568,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".home-page-container {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  margin: 5px;\r\n  color: #C74B72;\r\n}\r\n\r\n.jumbotron {\r\n  color: #C74B72;\r\n}\r\n"
+module.exports = ".home-page-container {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  margin: 5px;\r\n  color: #C74B72;\r\n}\r\n\r\n.jumbotron {\r\n  color: #C74B72;\r\n}\r\n\r\n.my-button {\r\n  border: 0;\r\n  background-color: #C74B72;\r\n}\r\n"
 
 /***/ }),
 
@@ -579,7 +579,7 @@ module.exports = ".home-page-container {\r\n  display: flex;\r\n  align-items: c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home-page-container\">\n  <h1>About Foursquare Application</h1>\n  <div class=\"jumbotron\">\n    <h1 class=\"display-4\">Hello, world!</h1>\n    <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>\n    <hr class=\"my-4\">\n    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>\n    <p class=\"lead\">\n      <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>\n    </p>\n  </div>\n</div>\n"
+module.exports = "<div class=\"home-page-container\">\n  <h1>About Foursquare Application</h1>\n  <div class=\"jumbotron\">\n    <hr class=\"my-4\">\n    <img src=\"assets/foursquare_home.png\" alt=\"\">\n\n    <p class=\"lead\">\n      <a class=\"btn btn-primary my-button\" target=\"_blank\" href=\"https://developer.foursquare.com/docs\" role=\"button\">Learn more</a>\n    </p>\n  </div>\n</div>\n"
 
 /***/ }),
 

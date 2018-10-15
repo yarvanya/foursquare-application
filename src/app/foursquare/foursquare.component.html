@@ -33,9 +33,9 @@
 
   <div class="foursquare-table">
     <div *ngIf="showInTheMap" class="google-maps-container">
-      <agm-map [latitude]="default_lat" [longitude]="default_lng">
+      <agm-map [latitude]="default_lat" [longitude]="default_lng" [zoom]="17">
         <agm-marker [latitude]="default_lat" [longitude]="default_lat"></agm-marker>
-        <agm-marker latitude="52.678418" longitude="8.809007"></agm-marker>
+        <agm-marker *ngFor="let venue of foursquareData.venues" [latitude]="venue.location.lat" [longitude]="venue.location.lng"></agm-marker>
       </agm-map>
     </div>
 
