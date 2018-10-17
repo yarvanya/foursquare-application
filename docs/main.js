@@ -92,7 +92,7 @@ module.exports = ".main-page-container {\r\n  width: 80%;\r\n  margin: 0 auto;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-page-container\">\n  <app-header></app-header>\n  <div class=\"router-container\">\n    <app-nav></app-nav>\n    <router-outlet></router-outlet>\n  </div>\n  <app-footer></app-footer>\n</div>\n"
+module.exports = "<div class=\"main-page-container\">\r\n  <app-header></app-header>\r\n  <div class=\"router-container\">\r\n    <app-nav></app-nav>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n  <app-footer></app-footer>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -187,7 +187,7 @@ function getAuthServiceConfigs() {
     var config = new angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__["AuthServiceConfig"]([
         {
             id: angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__["GoogleLoginProvider"].PROVIDER_ID,
-            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__["GoogleLoginProvider"]('846330504971-denujlbic4hetrq9l32v2pj9rj43h8bs.apps.googleusercontent.com')
+            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__["GoogleLoginProvider"]('900975960308-8ullgmfbm4ec64tckc8nmsst4v8khivh.apps.googleusercontent.com')
         }
     ]);
     return config;
@@ -216,7 +216,7 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"],
                 _agm_core__WEBPACK_IMPORTED_MODULE_16__["AgmCoreModule"].forRoot({
-                    apiKey: 'AIzaSyD7hK7ZyE8a1u-ybHZi0gjiGm2pIV8zi0o'
+                    apiKey: 'AIzaSyBHKssNPSkqHYd-RkDaqM1dgEBar1Myfqk'
                 })
             ],
             providers: [
@@ -254,7 +254,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  contact works!\n</p>\n"
+module.exports = "<p>\r\n  contact works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -317,7 +317,7 @@ module.exports = ".footer-container {\r\n  text-align: center;\r\n  margin: 5px;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"footer-container\">\n  <h3><strong>created by Ivan Yarymovych: 2018</strong></h3>\n</div>\n"
+module.exports = "<div class=\"footer-container\">\r\n  <h3><strong>created by Ivan Yarymovych: 2018</strong></h3>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -380,7 +380,7 @@ module.exports = "#venues {\r\n  font-family: \"Trebuchet MS\", Arial, Helvetica
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"foursquare-container\">\n  <div class=\"foursquare-form\" [formGroup]=\"foursquareForm\">\n    <h4>Please, fill in the form to get all needed venues:</h4>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">City</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" (change)=\"getCoordinates()\" formControlName=\"city\">\n      </div>\n    </div>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">Query</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" class=\"form-control\" formControlName=\"query\">\n      </div>\n    </div>\n    <div class=\"form-group row\">\n      <label class=\"col-sm-2 col-form-label\">Radius</label>\n      <div class=\"col-sm-10\">\n        <input type=\"number\" class=\"form-control\" formControlName=\"radius\">\n      </div>\n    </div>\n    <div class=\"pull-right\">\n      <button type=\"submit\" [disabled]=\"foursquareForm.invalid\" class=\"btn btn-primary my-button\" (click)=\"loadVenues()\">Load Venues</button>\n      <button\n        type=\"submit\"\n        *ngIf=\"foursquareData.venues.length > 0\"\n        class=\"btn btn-primary my-button\"\n        (click)=\"showMap()\">\n        Show on the Map\n      </button>\n    </div>\n  </div>\n\n  <div class=\"foursquare-table\">\n    <div *ngIf=\"showInTheMap\" class=\"google-maps-container\">\n      <agm-map [latitude]=\"default_lat\" [longitude]=\"default_lng\" [zoom]=\"17\">\n        <agm-marker [latitude]=\"default_lat\" [longitude]=\"default_lat\"></agm-marker>\n        <agm-marker *ngFor=\"let venue of foursquareData.venues\" [latitude]=\"venue.location.lat\" [longitude]=\"venue.location.lng\"></agm-marker>\n      </agm-map>\n    </div>\n\n    <table id=\"venues\" *ngIf=\"foursquareData.venues.length > 0\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Address</th>\n        <th>Country</th>\n        <th>City</th>\n        <th>Lat</th>\n        <th>Lng</th>\n      </tr>\n      <tr *ngFor=\"let venue of foursquareData.venues\">\n        <td>{{venue.id}}</td>\n        <td>{{venue.name}}</td>\n        <td>{{venue.location.address}}</td>\n        <td>{{venue.location.country}}</td>\n        <td>{{venue.location.city}}</td>\n        <td>{{venue.location.lat}}</td>\n        <td>{{venue.location.lng}}</td>\n      </tr>\n    </table>\n  </div>\n</div>\n"
+module.exports = "<div class=\"foursquare-container\">\r\n  <div class=\"foursquare-form\" [formGroup]=\"foursquareForm\">\r\n    <h4>Please, fill in the form to get all needed venues:</h4>\r\n    <div class=\"form-group row\">\r\n      <label class=\"col-sm-2 col-form-label\">City</label>\r\n      <div class=\"col-sm-10\">\r\n        <input type=\"text\" class=\"form-control\" (change)=\"getCoordinates()\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group row\">\r\n      <label class=\"col-sm-2 col-form-label\">Query</label>\r\n      <div class=\"col-sm-10\">\r\n        <input type=\"text\" class=\"form-control\" formControlName=\"query\">\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group row\">\r\n      <label class=\"col-sm-2 col-form-label\">Radius</label>\r\n      <div class=\"col-sm-10\">\r\n        <input type=\"number\" class=\"form-control\" formControlName=\"radius\">\r\n      </div>\r\n\r\n      <div class=\"pull-right\">\r\n        <button type=\"submit\" [disabled]=\"foursquareForm.invalid\" class=\"btn btn-primary my-button\" (click)=\"loadVenues()\">Load Venues</button>\r\n        <button\r\n          type=\"submit\"\r\n          *ngIf=\"foursquareData.venues.length > 0\"\r\n          class=\"btn btn-primary my-button\"\r\n          (click)=\"showMap()\">\r\n          Show on the Map\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"foursquare-table\">\r\n    <div *ngIf=\"showInTheMap\" class=\"google-maps-container\">\r\n      <agm-map [latitude]=\"default_lat\" [longitude]=\"default_lng\" [zoom]=\"17\">\r\n        <agm-marker [latitude]=\"default_lat\" [longitude]=\"default_lat\"></agm-marker>\r\n        <agm-marker *ngFor=\"let venue of foursquareData.venues\" [latitude]=\"venue.location.lat\" [longitude]=\"venue.location.lng\"></agm-marker>\r\n      </agm-map>\r\n    </div>\r\n\r\n    <table id=\"venues\" *ngIf=\"foursquareData.venues.length > 0\">\r\n      <tr>\r\n        <th>Id</th>\r\n        <th>Name</th>\r\n        <th>Address</th>\r\n        <th>Country</th>\r\n        <th>City</th>\r\n        <th>Lat</th>\r\n        <th>Lng</th>\r\n      </tr>\r\n      <tr *ngFor=\"let venue of foursquareData.venues\">\r\n        <td>{{venue.id}}</td>\r\n        <td>{{venue.name}}</td>\r\n        <td>{{venue.location.address}}</td>\r\n        <td>{{venue.location.country}}</td>\r\n        <td>{{venue.location.city}}</td>\r\n        <td>{{venue.location.lat}}</td>\r\n        <td>{{venue.location.lng}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -456,7 +456,7 @@ var FoursquareComponent = /** @class */ (function () {
         return this.http.get('https://maps.googleapis.com/maps/api/geocode/json', {
             params: {
                 address: city,
-                key: 'AIzaSyB_NrykpVqUWKTLEwB3ApiMnxCy4ofLGRI'
+                key: 'AIzaSyAu67jZ96pGx3jFGQ_K9xZ8l6lmHwmJZV0'
             }
         });
     };
@@ -493,7 +493,7 @@ module.exports = ".header-container {\r\n  border: 3px solid #C74B72;\r\n  backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-container\">\n  <h1>Foursquare Application</h1>\n  <div class=\"login-logout-container\">\n    <button\n      type=\"button\"\n      class=\"btn btn-primary my-button\"\n      *ngIf=\"!authenticated\"\n      (click)=\"socialSignIn('google')\">\n      Google Login\n    </button>\n    <div *ngIf=\"authenticated\">\n      <button\n        type=\"button\"\n        class=\"btn btn-primary my-button\"\n        (click)=\"socialSignOut()\">\n        Google Logout\n      </button>\n      <h4>Вітаємо, {{googleData.name}}</h4>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"header-container\">\r\n  <h1>Foursquare Application</h1>\r\n  <div class=\"login-logout-container\">\r\n    <button\r\n      type=\"button\"\r\n      class=\"btn btn-primary my-button\"\r\n      *ngIf=\"!authenticated\"\r\n      (click)=\"socialSignIn('google')\">\r\n      Google Login\r\n    </button>\r\n    <div *ngIf=\"authenticated\">\r\n      <button\r\n        type=\"button\"\r\n        class=\"btn btn-primary my-button\"\r\n        (click)=\"socialSignOut()\">\r\n        Google Logout\r\n      </button>\r\n      <h4>Вітаємо, {{googleData.name}}</h4>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -579,7 +579,7 @@ module.exports = ".home-page-container {\r\n  display: flex;\r\n  align-items: c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home-page-container\">\n  <h1>About Foursquare Application</h1>\n  <div class=\"jumbotron\">\n    <hr class=\"my-4\">\n    <img src=\"assets/foursquare_home.png\" alt=\"\">\n\n    <p class=\"lead\">\n      <a class=\"btn btn-primary my-button\" target=\"_blank\" href=\"https://developer.foursquare.com/docs\" role=\"button\">Learn more</a>\n    </p>\n  </div>\n</div>\n"
+module.exports = "<div class=\"home-page-container\">\r\n  <h1>About Foursquare Application</h1>\r\n  <div class=\"jumbotron\">\r\n    <hr class=\"my-4\">\r\n    <img src=\"assets/foursquare_home.png\" alt=\"\">\r\n\r\n    <p class=\"lead\">\r\n      <a class=\"btn btn-primary my-button\" target=\"_blank\" href=\"https://developer.foursquare.com/docs\" role=\"button\">Learn more</a>\r\n    </p>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -693,7 +693,7 @@ module.exports = ".nav-container {\r\n  width: 50%;\r\n  margin: 5px auto;\r\n}\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-container\">\n  <ul>\n    <li><a [routerLink]=\"['/home']\" routerLinkActive=\"active\">Home</a></li>\n    <li><a [routerLink]=\"['/task']\" routerLinkActive=\"active\">Task</a></li>\n    <li><a [routerLink]=\"['/api']\" routerLinkActive=\"active\">Foursquare Api</a></li>\n    <li><a [routerLink]=\"['/contacts']\" routerLinkActive=\"active\">Contacts</a></li>\n  </ul>\n</div>\n"
+module.exports = "<div class=\"nav-container\">\r\n  <ul>\r\n    <li><a [routerLink]=\"['/home']\" routerLinkActive=\"active\">Home</a></li>\r\n    <li><a [routerLink]=\"['/task']\" routerLinkActive=\"active\">Task</a></li>\r\n    <li><a [routerLink]=\"['/api']\" routerLinkActive=\"active\">Foursquare Api</a></li>\r\n    <li><a [routerLink]=\"['/contacts']\" routerLinkActive=\"active\">Contacts</a></li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -758,7 +758,7 @@ module.exports = ".task-container {\r\n  text-align: center;\r\n}\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"task-container\">\n  <h1>Task:</h1>\n  <img src=\"assets/foursquare-task.jpg\" alt=\"\">\n</div>\n"
+module.exports = "<div class=\"task-container\">\r\n  <h1>Task:</h1>\r\n  <img src=\"assets/foursquare-task.jpg\" alt=\"\">\r\n</div>\r\n"
 
 /***/ }),
 
@@ -863,7 +863,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Ivan\Desktop\Angular 6 training\Lesson 1\foursquare-application\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\iyary\Desktop\foursquare-application\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -67,7 +67,7 @@ export class FoursquareComponent implements OnInit {
     return this.http.get('https://maps.googleapis.com/maps/api/geocode/json', {
       params: {
         address: city,
-        key: 'AIzaSyB_NrykpVqUWKTLEwB3ApiMnxCy4ofLGRI'
+        key: 'AIzaSyAu67jZ96pGx3jFGQ_K9xZ8l6lmHwmJZV0'
       }
     });
   }

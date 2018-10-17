@@ -24,7 +24,7 @@ export function getAuthServiceConfigs() {
     [
       {
         id: GoogleLoginProvider.PROVIDER_ID,
-        provider: new GoogleLoginProvider('846330504971-denujlbic4hetrq9l32v2pj9rj43h8bs.apps.googleusercontent.com')
+        provider: new GoogleLoginProvider('900975960308-8ullgmfbm4ec64tckc8nmsst4v8khivh.apps.googleusercontent.com')
       }
     ]
   );
@@ -51,7 +51,7 @@ export function getAuthServiceConfigs() {
     HttpClientModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD7hK7ZyE8a1u-ybHZi0gjiGm2pIV8zi0o'
+      apiKey: 'AIzaSyBHKssNPSkqHYd-RkDaqM1dgEBar1Myfqk'
     })
   ],
   providers: [
